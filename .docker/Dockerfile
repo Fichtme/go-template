@@ -1,6 +1,6 @@
 FROM golang:1.13.6-alpine as base
 LABEL maintainer="Henny krijnen <krijnen.h@gmail.com>"
-ARG APP_ENV2
+ARG APP_ENV
 WORKDIR /app
 
 FROM base as watcher
