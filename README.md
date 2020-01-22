@@ -1,5 +1,5 @@
 # go-template
-A docker-compose template for GO projects
+A docker-compose template for GO projects with code reload
 
 # setting up project
 - Clone project
