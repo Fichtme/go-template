@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  go-container:
+    image: ${CI_REGISTRY_IMAGE}/my-project-name:${CI_COMMIT_SHA} # use this if you use gitlab ci
+    environment:
+      - APP_ENV=${APP_ENV}
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+      target: main
+    expose:
+      - 8080

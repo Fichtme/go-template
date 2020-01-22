@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+  go-container:
+    image: my-project-name
+    build:
+      target: watcher
+    volumes:
+      - ./main/:/go/src/main/:rw
+    ports:
+      - "8080:8080"

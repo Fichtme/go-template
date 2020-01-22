@@ -1,0 +1,18 @@
+desc: go-container
+triggers:
+  - name: ""
+    pattens:
+      - '**/*.*'
+    env:
+      DEBUG: "1"
+      CGO_ENABLED: 0
+      GOOS: linux
+    cmd: cd /go/src/main/ && go get -t && go vet -composites=false && go build -o /bin/my-project-name && /bin/my-project-name
+    shell: true
+    delay: 100ms
+    stop_timeout: 500ms
+    signal: KILL
+    kill_signal: ""
+watch_paths:
+  - /go/src/main/
+watch_depth: 1
